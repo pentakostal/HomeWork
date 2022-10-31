@@ -1,2 +1,0 @@
-# HomeWork
-Homework from Codelex.
