@@ -10,7 +10,7 @@ class geometryCalculator {
     }
     public static function areaTriangle($base, $height) {
         echo "Calculate the area of triangle." . PHP_EOL;
-        return $base > 0 && $height ? number_format($base * $height * 0.5) : "error";
+        return $base > 0 && $height ? roundNumber($base * $height * 0.5) : "error";
     }
 }
 
