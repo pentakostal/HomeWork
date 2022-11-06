@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 class AsciiFigure {
     public $number;
     function __construct($number){
@@ -12,5 +13,5 @@ class AsciiFigure {
         }
     }
 }
-$build=new AsciiFigure(readline("Enter number-> "));
+$build=new AsciiFigure((int) readline("Enter number-> "));
 $build->buildPyramid();

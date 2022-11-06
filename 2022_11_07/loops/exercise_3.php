@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 $wordFirst = (string) readline("Enter first word: ");
 $wordSecond = (string) readline("Enter second word: ");
 $i=0;

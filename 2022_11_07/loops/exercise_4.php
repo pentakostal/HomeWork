@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 class FizzBuzz {
     public $number;
     private $complete;
@@ -34,5 +35,5 @@ class FizzBuzz {
         }
     }
 }
-$logic = new FizzBuzz(readline("Enter number: -> "));
+$logic = new FizzBuzz((int)readline("Enter number: -> "));
 echo $logic->fizzBuzz();
