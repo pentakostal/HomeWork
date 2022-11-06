@@ -1,5 +1,5 @@
 <?php
-class fizzBuzz {
+class FizzBuzz {
     public $number;
     private $complete;
 
@@ -34,5 +34,5 @@ class fizzBuzz {
         }
     }
 }
-$logic = new fizzBuzz(readline("Enter number: -> "));
+$logic = new FizzBuzz(readline("Enter number: -> "));
 echo $logic->fizzBuzz();

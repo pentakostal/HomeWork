@@ -1,5 +1,5 @@
 <?php
-class rollTwoDice {
+class RollTwoDice {
     public $desiredSum;
     function __construct($desiredSum) {
         $this->desiredSum=$desiredSum;
@@ -18,5 +18,5 @@ class rollTwoDice {
         }
     }
 }
-$play = new rollTwoDice((int) readline("Enter desired sum: "));
+$play = new RollTwoDice((int) readline("Enter desired sum: "));
 $play->game();

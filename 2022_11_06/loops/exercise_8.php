@@ -1,5 +1,5 @@
 <?php
-class numberSquare {
+class NumberSquare {
     public $min, $max;
     function __construct($min, $max){
         $this->min=$min;
@@ -20,5 +20,5 @@ class numberSquare {
         }
     }
 }
-$play=new numberSquare((int)readline("Min? "), (int)readline("Max? "));
+$play=new NumberSquare((int)readline("Min? "), (int)readline("Max? "));
 $play->square();

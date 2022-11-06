@@ -1,5 +1,5 @@
 <?php
-class pigLet {
+class PigLet {
     private $score;
     function __construct($score) {
         (int) $this->score=$score;
@@ -25,5 +25,5 @@ class pigLet {
         }
     }
 }
-$game = new pigLet(0);
+$game = new PigLet(0);
 $game->game();
