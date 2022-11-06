@@ -26,4 +26,4 @@ class pigLet {
     }
 }
 $game = new pigLet(0);
-echo $game->game();
+$game->game();
