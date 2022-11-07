@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 class NumberSquare {
-    public $min, $max;
+    public int $min, $max;
     function __construct($min, $max){
         $this->min=$min;
         $this->max=$max;
