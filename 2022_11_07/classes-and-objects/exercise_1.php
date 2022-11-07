@@ -1,35 +1,44 @@
 <?php
 declare(strict_types=1);
-class Product {
-    public $name, $price, $amount;
-    function __constructor(string $name, float $price, int $amount)
+class Product
+{
+    private string $name;
+    private float $price;
+    private int $amount;
+
+    public function __construct(string $name, float $price, int $amount)
     {
         $this->name=$name;
         $this->price=$price;
         $this->amount=$amount;
     }
-    function printProduct(): string
+
+    public function printProduct(): string
     {
         return "$this->name, $this->price EUR, $this->amount units".PHP_EOL;
     }
-    function changeQuantity($amount)
+
+    public function changeQuantity($amount): int
     {
         return $this->amount=$amount;
     }
-    function changePrice($price)
+
+    public function changePrice($price): float
     {
         return $this->price=$price;
     }
 }
-function createDb(string $name, float $price, int $amount): string
-{
-    $merch=new Product();
-    $merch->name = $name;
-    $merch->changePrice(readline("Enter price:"));
-    $merch->changeQuantity(readline("Enter quntity: "));
-    return $merch->printProduct();
-}
-echo createDb("Logitech mouse", 70.00, 14);
-echo createDb("iPhone 5s", 999.99, 3);
-echo createDb("Epson EB-U05", 440.46, 1);
 
+$indexOne = new Product("Logitech mouse", 70.00, 14);
+$indexTwo = new Product("iPhone 5s", 999.99, 3);
+$indexThree = new Product("Epson EB-U05", 440.46, 1);
+
+echo $indexOne->printProduct();
+echo $indexTwo->printProduct();
+echo $indexThree->printProduct();
+
+$indexTwo->changeQuantity(10);
+echo $indexTwo->printProduct();
+
+$indexThree->changePrice(349.99);
+echo $indexThree->printProduct();
