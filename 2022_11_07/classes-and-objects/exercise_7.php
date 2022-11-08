@@ -17,16 +17,27 @@ class Dog
 
 class DogTest extends Dog
 {
-
     public function getDog(): string
     {
         return $this->name . " , " . $this->sex;
     }
 }
 
-$a = new DogTest("Max", "male", "Lady", "Rocky");
-echo $a->getDog();
+function createDog(string $name, string $sex, string $mother, string $father): DogTest
+{
+    $dog=new DogTest($name, $sex, $mother, $father);
+    echo $dog->getDog() . PHP_EOL;
+    return $dog;
+}
 
+createDog("Max", "male", "Lady", "Rocky" );
+/*createDog("Rocky", "male");
+createDog("Sparky", "male");
+createDog("Buster", "male");
+createDog("Sam", "male");
+createDog("Lady", "female");
+createDog("Molly", "female");
+createDog("Coco", "female");
 
 //var_dump($dogDb);
 
