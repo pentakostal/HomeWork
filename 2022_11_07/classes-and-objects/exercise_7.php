@@ -38,6 +38,6 @@ createDog("Sam", "male");
 createDog("Lady", "female");
 createDog("Molly", "female");
 createDog("Coco", "female");
-
+*/
 //var_dump($dogDb);
 
