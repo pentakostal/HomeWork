@@ -25,7 +25,7 @@ class Movie
 }
 
 $moviesDb = [
-    $casionRoyale = new Movie("Casino Royale", "Eon Produtions", "PG13"),
+    $casinoRoyale = new Movie("Casino Royale", "Eon Produtions", "PG13"),
     $glass = new Movie("Glass", "Buena Vista International", "PG13"),
     $spiderMan = new Movie("Spider-Man: Into the Spider-Verse", "Columbia Pictures", "PG")
 ];
