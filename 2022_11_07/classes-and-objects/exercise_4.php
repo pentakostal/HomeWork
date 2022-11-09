@@ -12,7 +12,7 @@ class Movie
         $this->rating=$rating;
     }
 
-    public function getPG(array $movies): array
+    public static function getPG(array $movies): array
     {
         $filteredMovies = [];
         foreach ($movies as $movie) {
@@ -21,6 +21,11 @@ class Movie
             }
         }
         return $filteredMovies;
+    }
+
+    public function getMovies(): string
+    {
+        return $this->title . " , studio is " . $this->studio . " , rating is " . $this->rating;
     }
 }
 
