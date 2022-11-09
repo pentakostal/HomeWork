@@ -24,7 +24,8 @@ class SavingsAccount
 
     public function monthInterestRate($deposite): void
     {
-        $this->interestEarnedSum += $deposite * ($this->interestRate / 12);
+        $this->interestEarnedSum += $this->balance * ($this->interestRate / 12);
+        $this->balance += $this->balance * ($this->interestRate / 12);
     }
 
     public function getMonthInterestRate(): float
@@ -39,7 +40,7 @@ class SavingsAccount
 
     public function getWithdrawMemory(): float
     {
-        return round($this->withdrawMemory, 2;
+        return round($this->withdrawMemory, 2);
     }
 
     public function countDeposite($deposite): void
@@ -61,7 +62,7 @@ $user->setInterestRate(readline("Enter anual interest level (12, 27 , 35): "));
 
 $iteration = 0;
 while (true) {
-    if ($iteration == 3) {
+    if ($iteration == 4) {
         break;
     } else {
         $user->countDeposite(readline("Enter your deposite: "));
@@ -71,9 +72,9 @@ while (true) {
     }
 }
 
-echo "Total balance is " . $user->getBalance() . PHP_EOL;
 echo "Total deposite is " . $user->getDepositeMemory() . PHP_EOL;
 echo "Total withdraw is " . $user->getWithdrawMemory() . PHP_EOL;
 echo "Interest earned is " . $user->getMonthInterestRate() . PHP_EOL;
-echo "Ending balance is " . round(($user->getBalance() + $user->getMonthInterestRate()), 2) . PHP_EOL;
+echo "Total balance is " . $user->getBalance() . PHP_EOL;
+
 //var_dump($user);
