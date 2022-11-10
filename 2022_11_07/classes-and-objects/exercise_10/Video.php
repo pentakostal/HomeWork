@@ -2,16 +2,16 @@
 class Video
 {
     private string $title;
-    private string $status;
+    //private float $rating;
     private int $checkedOutCounter = 0;
-
-    private ?Video $rating;
+    private ?string $status;
+    private ?float $rating;
 
     public const CHECKED_OUT = "checked out";
-    public const CHECKED_IN = "checked in";
+    public const CHECKED_IN = "in store";
 
 
-    public function __construct(string $title, string $status, ?Video $rating = null)
+    public function __construct(string $title, ?string $status = null, ?float $rating = null)
     {
         $this->title = $title;
         $this->status = $status;
@@ -24,6 +24,11 @@ class Video
         $this->checkedOutCounter++;
     }
 
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
     public function getCheckedOutCounter(): int
     {
         return $this->checkedOutCounter;
@@ -34,8 +39,18 @@ class Video
         $this->status = Video::CHECKED_IN;
     }
 
-    public function receivRating($rating): void
+    public function setRating(float $rating): void
     {
-        $this->rating = ($rating + $this->rating) / 2;
+        $this->rating = $rating;
+    }
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function getRating(): ?float
+    {
+        return $this->rating;
     }
 }
