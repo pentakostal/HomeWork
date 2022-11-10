@@ -10,14 +10,25 @@ class AccountTransfer
         $this->accountDb[] = new Account($name, $balance);
     }
 
-    function transfer($accountFrom, $accountTo, $amount) {
+    public function transfer($accountFrom, $accountTo, $amount) {
         foreach ($this->accountDb as &$value) {
-            if ($accountFrom == $value->name) {
+            if ($accountFrom == $value->getName()) {
                 $value->withdraw($amount);
             }
-            if ($accountTo == $value->name) {
+            if ($accountTo == $value->getName()) {
                 $value->deposite($amount);
             }
         }
+    }
+
+    public function getInfo($name): string
+    {
+        $info = "";
+        foreach ($this->accountDb as &$value) {
+            if ($name == $value->getName()) {
+                $info = $value->getAccountInfo();
+            }
+        }
+        return $info;
     }
 }
